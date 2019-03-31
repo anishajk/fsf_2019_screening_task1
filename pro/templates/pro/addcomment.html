@@ -1,0 +1,17 @@
+{% extends 'pro/base.html' %}
+
+{% block body%}
+
+	{% for cmt in object_list %}
+		{{cmt.username}}<br>
+		{{cmt.comment}}
+
+	{% endfor %}
+
+	<h1>Add New Comment</h1>
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p}}
+		<button tye='submit'>Submit</button>
+	</form>
+{% endblock %}	

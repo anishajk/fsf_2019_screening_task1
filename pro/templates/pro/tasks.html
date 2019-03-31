@@ -1,0 +1,47 @@
+{% extends 'pro/base.html' %}
+
+{% block body%}
+<h1>Tasks are:</h1>
+<div class="container">
+
+
+	<table border="0"  width="100%" >
+		<tr>
+			<th><center><u> Title</u>  </center> </th>
+			<th><center><u>Description</u></center></th>
+			<th><center><u>Assignee </u></center></th>
+			<th><center><u>Status</u></center> </th>
+			<th> </th>
+			<th></th>
+		</tr>
+		{% for task in object_list %}
+		<tr>
+			<td><center><br>{{ task.title }}</center></td>
+			<td><center><br>{{ task.description }}</center></td>
+			<td><center><br>{{ task.assignee }}</center></td>
+			<td><center><br>{{ task.status }}</center></td>
+			<td><center><br><a href="{% url 'pro:task-update' task.id %}">Edit</a></center></td>
+			<td><center><br><a href="{% url 'pro:add-comment' %}">Comment</a></center></td>
+			
+		</tr>
+		
+		
+		
+		
+		
+		{% endfor %}
+	</table>	
+
+		
+
+
+
+	
+		
+
+
+
+
+		
+
+{% endblock %}

@@ -1,0 +1,26 @@
+
+{% extends 'pro/base.html' %}
+
+{% block body%}
+
+
+{% if all_teams %}
+	<ul>
+		{% for team in all_teams %}
+		<li> <a href = "{{team.id}}">
+			<big>
+		{{team.team_name}}</big></a></li>
+
+		{% endfor %}
+
+	</ul>
+
+
+	
+	
+{% else %}
+	<h3> You Dont have any team</h3>
+{% endif %}			
+
+
+{% endblock %}
